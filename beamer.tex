@@ -1,0 +1,90 @@
+\documentclass{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{hyperref}
+
+\title{Critical Appraisal of Zhou (2025)}
+\subtitle{Summary of Main Limitations \& Recommendations}
+\author{ }
+\date{ }
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}{Main Limitations}
+  \begin{enumerate}
+    \item \textbf{No visualization of ``who’s treated when''}
+      \begin{itemize}
+        \item Lacks a cohort‐by‐cohort rollout plot to verify timing and coding of treatment.
+      \end{itemize}
+    \item \textbf{Lack of treated vs.\ control cell counts}
+      \begin{itemize}
+        \item Does not report how many industry–region cells (or establishments) fall into treated and control groups.
+      \end{itemize}
+    \item \textbf{No event‐study or pre‐trend graph}
+      \begin{itemize}
+        \item Omits an event‐study visualization, leaving parallel‐trends assumption unverified.
+      \end{itemize}
+    \item \textbf{Potential selection‐on‐Y(0) not explored}
+      \begin{itemize}
+        \item Fails to test whether pre‐2001 female outcomes differ systematically between treated and control groups.
+      \end{itemize}
+    \item \textbf{No sensitivity/placebo tests; limited robustness checks}
+      \begin{itemize}
+        \item Does not conduct placebo lead‐lag checks or formal bounding exercises.
+      \end{itemize}
+    \item \textbf{Alternative estimators not attempted}
+      \begin{itemize}
+        \item Does not apply modern DiD estimators (e.g., Callaway–Sant’Anna) or matching/synthetic‐control approaches.
+      \end{itemize}
+    \item \textbf{Clustering and inference choices not fully justified}
+      \begin{itemize}
+        \item Clustering levels are unclear; no discussion of serial correlation or wild‐cluster bootstrap.
+      \end{itemize}
+    \item \textbf{Insufficient discussion of dynamic treatment, mechanisms, and limitations}
+      \begin{itemize}
+        \item Treats post‐2001 period as homogeneous “shock,” without exploring phase‐in dynamics or discussing concurrent labor‐market reforms.
+      \end{itemize}
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{Recommendations for Improvement}
+  \begin{enumerate}
+    \item \textbf{Include Event‐Study Plots}
+      \begin{itemize}
+        \item Estimate and graph year‐by‐year coefficients for 1995–2000 (leads) and 2001–2006 (lags) to check parallel trends and dynamic effects.
+      \end{itemize}
+    \item \textbf{Report Counts of Treated vs.\ Control Cells}
+      \begin{itemize}
+        \item Tabulate how many industry–region cells (and establishments/workers) fall above and below the median treatment‐intensity cutoff.
+      \end{itemize}
+    \item \textbf{Conduct Placebo “Fake‐Post” Regressions}
+      \begin{itemize}
+        \item Re‐run DiD with a placebo cutoff in 1999 or 2000 to test for spurious effects.
+      \end{itemize}
+    \item \textbf{Explore Alternative Cutoffs for Treatment Intensity}
+      \begin{itemize}
+        \item Try using the 75th percentile (or continuous treatment) instead of the median to define “treated.”
+      \end{itemize}
+    \item \textbf{Use Callaway–Sant’Anna or Goodman‐Bacon Decomposition}
+      \begin{itemize}
+        \item Apply modern multi‐period DiD estimators to account for phased guarantee removal and avoid negative TWFE weights.
+      \end{itemize}
+    \item \textbf{Test for Spillovers to Adjacent Regions/Industries}
+      \begin{itemize}
+        \item Analyze outcomes in neighboring industry–region cells to detect potential contamination of the control group.
+      \end{itemize}
+    \item \textbf{Clarify Clustering Strategy and Consider Wild‐Cluster Bootstrap}
+      \begin{itemize}
+        \item Justify clustering at the industry–region level and implement a wild‐cluster bootstrap if cluster counts are small.
+      \end{itemize}
+    \item \textbf{Expand Discussion of Limitations and Data Construction in an Appendix}
+      \begin{itemize}
+        \item Provide detailed code or pseudocode for treatment‐intensity calculations, variable definitions, and any imputations; include additional robustness tables.
+      \end{itemize}
+  \end{enumerate}
+\end{frame}
+
+\end{document}
